@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+
+    <title>Allebone.Me E-15 Under Construction</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+    <link href=
+    "http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+    rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <header class="header" id="top">
+        <div class="text-vertical-center">
+            <h1>Bryan E. Allebone</h1>
+
+
+            <h3>Project Four for E-15: Dynamic Web Applications</h3>
+            <br>
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1 text-center">
+                        <h3>This Project is not yet complete, but feel free to
+                        check back.<br>
+                        I expect it to be complete no later than:</h3>
+						<br>
+                        <div id="clock"></div>
+                        <br>
+                        <h3>From <a href="https://www.youtube.com/watch?v=5drjr9PmTMA">Now</a>.</h3>
+                        <br>
+
+
+                        <p>Omaha, Nebraska 68154</p>
+
+
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-phone fa-fw"></i>
+                            (719)235-8180</li>
+
+
+                            <li>
+                                <i class="fa fa-envelope-o fa-fw"></i> <a href=
+                                "mailto:bryanallebone@g.harvard.edu">bryanallebone@g.harvard.edu</a>
+                            </li>
+                        </ul>
+                        <br>
+
+
+                        <ul class="list-inline">
+                            <li>
+                                <a class="fa fa-facebook fa-fw fa-3x" href=
+                                "https://www.facebook.com/allebone" style=
+                                "font-style: italic"></a>
+                            </li>
+
+
+                            <li>
+                                <a class="fa fa-linkedin fa-fw fa-3x" href=
+                                "http://www.linkedin.com/in/ballebone" style=
+                                "font-style: italic"></a>
+                            </li>
+
+
+                            <li>
+                                <a class="fa fa-google-plus fa-fw fa-3x" href=
+                                "https://plus.google.com/u/0/107028875158218439746/posts"
+                                style="font-style: italic"></a>
+                            </li>
+
+
+                            <li>
+                                <a class="fa fa-pied-piper fa-fw fa-3x" href=
+                                "http://www.piedpiper.com/#hello" style=
+                                "font-style: italic"></a>
+                            </li>
+                        </ul>
+
+
+                        <p class="text-muted">Copyright: Bryan E. Allebone,
+                        2014</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script src="js/jquery-1.11.0.js"></script> <script src="js/bootstrap.min.js"></script> <script src="js/jquery.countdown.min.js"></script> <script>
+    $('#clock').countdown('2014/12/18 17:30:00').on('update.countdown', function(event) {
+        var $this = $(this).html(event.strftime(''
+        + '<span>%-w<\/span> week%!w '
+        + '<span>%-d<\/span> day%!d '
+        + '<span>%H<\/span> hr '
+        + '<span>%M<\/span> min '
+        + '<span>%S<\/span> sec'));
+         });
+    </script>
+</body>
+</html>
