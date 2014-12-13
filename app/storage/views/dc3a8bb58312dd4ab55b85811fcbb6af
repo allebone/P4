@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <?php echo $__env->make('task::layouts/inc.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <script>
+            
+            $(document).ready(function() {
+                // footer management
+                var w = $(window).height();
+                var res = w-123;
+                $(".container").css("min-height", res+"px")
+                $(window).resize(function() {
+                    w = $(window).height();
+                    res = w-123;
+                    $(".container").css("min-height", res+"px")
+                });
+            });
+            
+        </script>
+    </head>
+    <body>
+        <?php echo $__env->make('task::layouts/inc.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <div id='container' class="container" style="min-width: 1140px;max-width: 1140px;">           
+
+            <?php echo $__env->yieldContent('content'); ?>
+
+        </div>
+        <?php echo $__env->make('task::layouts/inc.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+        <div class="modal fade" id="abc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel"></h4>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>                    
+                </div>
+            </div>
+        </div>        
+
+    </body>
+</html>

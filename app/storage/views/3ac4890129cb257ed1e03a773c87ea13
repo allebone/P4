@@ -1,0 +1,217 @@
+<?php $__env->startSection('content'); ?>
+
+<div class="col-lg-12 col-md-12 col-sm-12">                        
+    <div id='success' class="alert alert-success" style='text-align: center;display:none;'>Registration Successfully Completed..!!</div>
+    <div class="col-lg-6 col-md-6 col-sm-6" style="margin:25%;margin-top: 5%;margin-bottom: 0px;">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Login</h3>
+                <button style="float:right;margin-top: -20px;" data-toggle='modal' data-target='#register_modal' type="button" class="btn btn-success btn-xs">Register</button>
+            </div>
+            <div class="panel-body">
+                <form role="form" id='login_form'>
+                    <?php echo Form::token(); ?>
+
+                    <span id='wrg_pwd_error' style='color:red;'></span>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email</label>
+                        <input type="email" class="form-control" id="log_eml" name='log_eml' placeholder="Enter Email Address">
+                        <span id='log_eml_error' style='color:red;'></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="log_pwd" name='log_pwd' placeholder="Enter Password">
+                        <span id='log_pwd_error' style='color:red;'></span>
+                    </div>
+                    <div class="checkbox">
+<!--                        <label>
+                            <input type="checkbox"> Remember Me
+                        </label>-->
+                        <a id="forgot_password" style="float:right;color:#000;cursor: pointer;">
+                            Forgot Password??
+                        </a>                                                
+                    </div>                                                
+                    <button id='login_submit' type="button" class="btn btn-block btn-success">Login</button>                    
+<!--                    <span id='loader'><img src='<?php echo asset("assets/images/loader.GIF"); ?>'></span>-->
+                </form>
+            </div>
+        </div>                                                            
+        <div id="forgot_password_div" style="display:none; width:100%;margin-bottom: 0px;">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Forgot Password</h3>                    
+                </div>
+                <div class="panel-body">
+                    <form role="form" id='forgot_password_form'>
+                        <?php echo Form::token(); ?>                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="email" class="form-control" id="frgt_eml" name='frgt_eml' placeholder="Enter Email Address">
+                            <span id='frgt_eml_error' style='color:red;'></span>
+                        </div>                        
+                        <button id='frgt_submit' type="button" class="btn btn-block btn-success">Submit</button>
+<!--                        <span id='loader'><img src='<?php echo asset("assets/images/loader.GIF"); ?>'></span>-->
+                    </form>
+                </div>
+            </div>
+        </div>                        
+    </div>                    
+</div>
+<!--                <nav class="navbar navbar-default navbar-fixed-bottom" style='width:76%;left:12%;'>
+                    <div class="navbar-header">
+                        <a class="navbar-brand" style='left:44% !important;float:none;position:absolute;color:black;font-size: 14px;'>&copy; 2014 | Jay Sheth</a>
+                    </div>                        
+                </nav>-->
+
+<script>
+    $(document).ready(function() {
+        $('#log_eml').focus();
+        $('#register').click(function() {
+            $.ajax({
+                url: '<?php echo route("register_user"); ?>',
+                type: 'post',
+                cache: false,
+                data: $('#register_form').serialize(),
+                success: function(result) {
+                    console.log(result);
+                    if (!result.success) {
+                        if (result.user_exist) {
+                            $('#user_ext_error').html(result.user_exist);
+                        }
+                        $.each(result.errors, function(index, error) {
+                            if (result.errors.reg_eml != null) {
+                                $('#eml_error').html(result.errors.reg_eml);
+                                $('#reg_eml').parent().addClass('has-error').focus();
+                            } else {
+                                $('#eml_error').html('');
+                                $('#reg_eml').parent().removeClass('has-error');
+                            }
+                            if (result.errors.reg_cpwd != null) {
+                                $('#cpwd_error').html(result.errors.reg_cpwd);
+                                $('#reg_cpwd').parent().addClass('has-error').focus();
+                            } else {
+                                $('#cpwd_error').html('');
+                                $('#reg_cpwd').parent().removeClass('has-error');
+                            }
+                            if (result.errors.reg_fname != null) {
+                                $('#fname_error').html(result.errors.reg_fname);
+                                $('#reg_fname').parent().addClass('has-error').focus();
+                            } else {
+                                $('#fname_error').html('');
+                                $('#reg_fname').parent().removeClass('has-error');
+                            }
+                            if (result.errors.reg_pwd != null) {
+                                $('#pwd_error').html(result.errors.reg_pwd);
+                                $('#reg_pwd').parent().addClass('has-error').focus();
+                            } else {
+                                $('#pwd_error').html('');
+                                $('#reg_pwd').parent().removeClass('has-error');
+                            }
+                        });
+                    } else {
+                        $('.error').html('');
+                        $('#register_form')[0].reset();
+                        $('#reg_eml').parent().removeClass('has-error');
+                        $('#reg_pwd').parent().removeClass('has-error');
+                        $('#reg_cpwd').parent().removeClass('has-error');
+                        $('#reg_fname').parent().removeClass('has-error');
+                        $('#register_modal').modal('hide');
+                        $('#success').slideDown(1500);
+                        $('#success').slideUp(3500);
+                    }
+                }
+            });
+        });
+        $('#login_submit').click(function() {
+            $.ajax({
+                url: '<?php echo route("login_user"); ?>',
+                type: 'post',
+                cache: false,
+                data: $('#login_form').serialize(),
+                success: function(result) {
+                    if (!result.success) {
+                        if (result.wrong_pwd || result.wrong_user) {
+                            $('#wrg_pwd_error').html((result.wrong_pwd == null) ? result.wrong_user : result.wrong_pwd);
+                        }
+                        $.each(result.errors, function(index, error) {
+                            if (result.errors.log_eml != null) {
+                                $('#log_eml_error').html(result.errors.log_eml);
+                                $('#log_eml').parent().addClass('has-error').focus();
+                            }
+                            if (result.errors.log_pwd != null) {
+                                $('#log_pwd_error').html(result.errors.log_pwd);
+                                $('#log_pwd').parent().addClass('has-error').focus();
+                            }
+                        });
+                    }
+                    else {
+                        window.location.href = "<?php echo route('tasks'); ?>";
+                    }
+                }
+            });
+        });
+        $('#forgot_password').click(function() {
+            $('#forgot_password_div').slideToggle();
+            setTimeout(function() {
+                $('#frgt_eml').focus();
+            }, 500);
+
+        });
+
+        $('#frgt_submit').click(function() {
+            $.ajax({
+                url: '<?php echo route("forgot_password"); ?>',
+                type: 'post',
+                data: $('#forgot_password_form').serialize(),
+                beforeSend: function() {
+                    $('#frgt_submit').prop('disabled', true);
+                },
+                success: function(result) {
+                    console.log(result);
+                    if (!result.success) {
+                        if (result.errors) {
+                            $.each(result.errors, function(index, error) {
+                                if (result.errors.frgt_eml != null) {
+                                    $('#frgt_eml_error').html(result.errors.frgt_eml);
+                                    $('#frgt_eml').parent().addClass('has-error').focus();
+                                }
+                            });
+                        }
+                        if (result.wrong_user) {
+                            $('#frgt_eml_error').html(result.wrong_user);
+                            $('#frgt_submit').prop('disabled', false);
+                        }
+                        $('#frgt_submit').removeAttr('disabled');
+                    } else {
+                        $('#frgt_eml_error').html('');
+                        $('#success').html('Password reset link is sent successfully to ' + result.user.email).slideDown().slideUp(7000);
+                        $('#frgt_eml').val('').focus();
+                        $('#frgt_submit').prop('disabled', false);
+                        setTimeout(function() {
+                            $('#success').html('Registration Successfully Completed..!!');
+                        }, 5500);
+                    }
+                }
+            });
+        });
+        $('#register_modal').on('hidden.bs.modal', function() {
+            $('#register_form')[0].reset();
+            $('.error').html('');
+            $('#reg_eml').parent().removeClass('has-error');
+            $('#reg_pwd').parent().removeClass('has-error');
+            $('#reg_cpwd').parent().removeClass('has-error');
+            $('#reg_fname').parent().removeClass('has-error');
+        });
+    });
+</script>
+<script>
+    window.location.hash = "no-back-button";
+    window.location.hash = "Again-No-back-button";//again because google chrome don't insert first hash into history
+    window.onhashchange = function() {
+        window.location.hash = "no-back-button";
+    }
+</script> 
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('task::layouts.loginDefault', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

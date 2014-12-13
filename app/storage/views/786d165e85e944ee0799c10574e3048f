@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>
+            Task
+        </title>
+    </head>
+    <body>
+        <h1>
+            <?php echo $title; ?>
+
+        </h1>
+        <div>
+            <p>
+                <?php echo $description; ?>  
+            </p>
+        </div>
+        <div>
+            <?php echo $created; ?>
+
+        </div>
+    </body>
+</html>

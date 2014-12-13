@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <script src="../../../assets/js/jquery-2.1.1.min.js"></script>
+        <script src="../../../assets/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        <title>
+            Reset Password
+        </title>
+    </head>
+    <body>
+        <div style='width:500px;margin-left: 400px;margin-top: 50px;'>
+            <form role="form" id='reset_pwd_form'>
+                <?php echo Form::token(); ?>            
+                <div class="form-group">                                
+                    <label for="exampleInputEmail1">New Password</label>
+                    <input type="password" class="form-control" id="rst_pwd" name='rst_pwd' placeholder="Enter New Password">
+                    <span id='reset_pwd_error' style='color:red;'></span>
+                </div>                            
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Confirm New Password</label>
+                    <input type="password" class="form-control" id="rst_c_pwd" name='rst_c_pwd' placeholder="Enter Confirm Password">
+                    <span id='reset_c_pwd_error' style='color:red;'></span>
+                </div>                            
+                <button type="button" id='rst_pwd_submit' class="btn btn-primary">Submit</button>
+            </form>    
+        </div>
+    </body>
+</html>
+<script>
+    $(document).ready(function() {
+        $('#rst_pwd').focus();
+        $('#rst_pwd_submit').click(function() {
+            $.ajax({
+                url: '<?php echo route("reset_password",array($code,$id)); ?>',
+                type: 'post',
+                cache: false,
+                data: $('#reset_pwd_form').serialize(),
+                success: function(result) {
+                    if (!result.success) {
+                        $.each(result.errors, function(index, error) {
+                            if (result.errors.rst_pwd != null) {
+                                $('#reset_pwd_error').html(result.errors.rst_pwd);
+                                $('#rst_pwd').parent().addClass('has-error').focus();
+                            }
+                            if (result.errors.rst_c_pwd != null) {
+                                $('#reset_c_pwd_error').html(result.errors.rst_c_pwd);
+                                $('#rst_c_pwd').parent().addClass('has-error').focus();
+                            }
+                        });
+                    } else {
+                        window.location.href = '<?php echo route("login"); ?>';
+                    }
+                },
+            });
+        });
+    });
+</script>

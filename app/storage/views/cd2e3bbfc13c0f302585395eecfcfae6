@@ -1,0 +1,5 @@
+<title>Mikepa</title>
+<script src="<?php echo asset('assets/js/jquery-2.1.1.min.js'); ?>"></script>
+<script src="<?php echo asset('assets/js/bootstrap.min.js'); ?>"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<script src="//cdn.jsdelivr.net/jquery.ba-bbq/1.3pre/jquery.ba-bbq.js"></script>

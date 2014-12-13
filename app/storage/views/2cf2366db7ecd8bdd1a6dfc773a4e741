@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>
+            Task
+        </title>
+    </head>
+    <body>
+        
+        <tabel>
+            <tr>
+                <td>
+                    <big><b>Task Summary:</b><big>
+                <td>
+                <td>
+                    <?php echo $title; ?>
+
+                <td>
+            </tr>
+            <tr>
+                <td>
+                    <big><b>Task Description:</b><big>
+                <td>
+                <td>
+                    <?php echo $description; ?>
+
+                <td>
+            </tr>
+            <tr>
+                <td>
+                    <big><b>Creation Date:</b><big>
+                <td>
+                <td>
+                    <?php echo $created; ?>
+
+                <td>
+            </tr>
+                
+        </tabel>
+            
+        
+    </body>
+</html>

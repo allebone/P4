@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <?php echo $__env->make('task::layouts/inc.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    </head>
+    <body>
+        <?php echo $__env->make('task::layouts/inc.loginHeader', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <div class="container" style="min-height: 594px;">                       
+                <?php echo $__env->yieldContent('content'); ?>            
+        </div>
+        <?php echo $__env->make('task::layouts/inc.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+        <div class="modal fade" id="register_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Register Your Self..!!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form" id='register_form'>
+                            <?php echo Form::token(); ?>
+
+                            <span id='user_ext_error' class='error' style='color:red;'></span>
+                            <div class="form-group">                                
+                                <label for="exampleInputEmail1">First Name</label>
+                                <input type="text" class="form-control" id="reg_fname" name='reg_fname' placeholder="Enter First Name...">
+                                <span id='fname_error' class='error' style='color:red;'></span>
+                            </div>                            
+                            <div class="form-group">                                
+                                <label for="exampleInputEmail1">Last Name</label>
+                                <input type="text" class="form-control" id="reg_lname" name='reg_lname' placeholder="Enter Last Name...">
+                                <span id='lname_error' class='error' style='color:red;'></span>
+                            </div>                            
+                            <div class="form-group">                                
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="email" class="form-control" id="reg_eml" name='reg_eml' placeholder="Enter Email Address...">
+                                <span id='eml_error' class='error' style='color:red;'></span>
+                            </div>                            
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="reg_pwd" name='reg_pwd' placeholder="Enter Password...">
+                                <span id='pwd_error' class='error' style='color:red;'></span>
+                            </div>                            
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Confirm Password</label>
+                                <input type="password" class="form-control" id="reg_cpwd" name='reg_cpwd' placeholder="Enter Confirm Password...">
+                                <span id='cpwd_error' class='error' style='color:red;'></span>
+                            </div>                            
+                            <button type="button" id='register' class="btn btn-success">Register..!!</button>
+                        </form>                        
+                    </div>                    
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

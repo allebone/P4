@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Look! I'm CRUDding</title>
+<!--        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">        -->
+        <script src="../assets/js/jquery-2.1.1.min.js"></script>
+        <script src="../assets/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">                        
+
+            <div class="jumbotron text-center">
+                <h2><?php echo $movie->title; ?></h2>
+                <p>
+                    <strong>Genre:</strong> <?php echo (!empty($movie->genre)) ? $movie->genre : 'Not Available'; ?><br>
+                    <strong>Director:</strong> <?php echo $movie->director; ?><br>
+                    <strong>Producer:</strong> <?php echo $movie->producer; ?><br>
+                    <strong>Music:</strong> <?php echo $movie->music; ?>
+
+                </p>
+            </div>
+
+        </div>
+    </body>
+</html>

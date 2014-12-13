@@ -1,0 +1,133 @@
+<html>
+    <head>
+        <title>Mikepa</title>
+<!--        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">    -->
+        <script src="../assets/js/jquery-2.1.1.min.js"></script>
+        <script src="../assets/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">           
+
+            <div id='success' class="alert alert-success">Movie Created Successfully..!!</div>
+
+            <!-- if there are creation errors, they will show here -->
+
+            <div id='error' class="alert alert-danger" style='display:none;'>
+                <ul></ul>
+            </div>
+
+            <?php echo Form::open(array('url' => isset($edit_movie) ? 'movies/update/'. $edit_movie->movie_id  : 'movies/insert','id'=>'insert_form')); ?>
+
+            <!--            <?php echo (isset($edit_movie)) ? print_r($edit_movie) : ''; ?>-->
+            <div id="title_div" class="form-group">
+                <?php echo Form::label('title', 'Title'); ?>
+
+                <?php echo Form::text('title', Input::old('title', isset($edit_movie) ? $edit_movie->title : ''), array('class' => 'form-control','placeholder'=>'Enter Task Title...')); ?>
+
+            </div>
+            <span id='title_error' style='color:red;'></span>            
+
+            <div id="description_div" class="form-group">
+                <?php echo Form::label('description', 'Description'); ?>
+
+                <?php echo Form::textarea('description', Input::old('description', isset($edit_movie) ? $edit_movie->director : ''), array('class' => 'form-control','placeholder'=>'Enter Task Description...')); ?>
+
+            </div>            
+            <span id='description_error' style='color:red;'></span>
+            
+            <div class="form-group">                
+                <?php echo Form::checkbox('email_task','email_task' ); ?> <?php echo 'E-mail This Task'; ?>                
+            </div>
+
+<!--            <div class="form-group">
+                <?php echo Form::label('producer', 'Producer'); ?>
+
+                <?php echo Form::text('producer', Input::old('producer', isset($edit_movie) ? $edit_movie->producer : ''), array('class' => 'form-control','placeholder'=>'Enter Movie Producer...')); ?>
+
+            </div>
+
+            <div class="form-group">
+                <?php echo Form::label('music', 'Music'); ?>
+
+                <?php echo Form::text('music', Input::old('music', isset($edit_movie) ? $edit_movie->music : ''), array('class' => 'form-control','placeholder'=>'Enter Movie Music Director...')); ?>
+
+            </div>-->
+
+            <?php echo Form::button(isset($edit_movie) ? 'Edit The Movie!' : 'Create The Task!', array('class' => 'btn btn-primary','id'=>isset($edit_movie) ? 'update_task' : 'insert_task')); ?>
+
+
+            <?php echo Form::close(); ?>
+
+
+        </div>       
+
+    </body>
+</html>
+<script>
+    $(document).ready(function() {
+        $('#success').hide();
+        $('#insert_task').click(function() {
+            $.ajax({
+                url: '<?php echo route("inserttask"); ?>',
+                type: 'post',
+                data: $('#insert_form').serialize(),
+                cache: false,
+                dataType: 'json',
+                success: function(result) {
+                    if (!result.success) {
+                        $.each(result.errors, function(index, error) {
+                            if (result.errors.title != null) {
+                                $('#title_error').html(result.errors.title);
+                                $('#title_div').addClass('has-error').focus();
+                            }
+                            if (result.errors.director != null) {
+                                $('#description_error').html(result.errors.director);
+                                $('#description_div').addClass('has-error').focus();
+                            }
+                        });
+                    } else {
+                        $('#title_error').html('');
+                        $('#title_div').removeClass('has-error');
+                        $('#description_error').html('');
+                        $('#description_div').removeClass('has-error');
+                        $('#success').show(1500);
+                        $('#insert_form').each(function() {
+                            this.reset();   //Here form fields will be cleared.
+                        });
+                        $('#success').hide(2500);
+                    }
+                }
+            });
+        });
+<?php if (isset($edit_movie)) { ?>
+            $('#update_movies').click(function() {
+                $.ajax({
+                    url: '<?php echo route("updatemovie",array($edit_movie->movie_id,$edit_movie->id)); ?>',
+                    type: 'post',
+                    data: $('#insert_form').serialize(),
+                    cache: false,
+                    dataType: 'json',
+                    success: function(result) {
+                        if (!result.success) {
+                            $.each(result.errors, function(index, error) {
+                                if (result.errors.title != null) {
+                                    $('#title_error').html(result.errors.title);
+                                    $('#title_div').addClass('has-error').focus();
+                                }
+                                if (result.errors.director != null) {
+                                    $('#description_error').html(result.errors.director);
+                                    $('#description_div').addClass('has-error').focus();
+                                }
+                            });
+                        } else {
+                            window.location.reload();
+                        }
+                    }
+                });
+            });
+<?php } ?>
+    });
+</script>

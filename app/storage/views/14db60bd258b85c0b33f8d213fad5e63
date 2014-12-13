@@ -1,0 +1,9 @@
+<div style="position:relative;">
+    <nav class="navbar navbar-inverse">
+        
+        <div class="navbar-header" style="width:100%" >
+            <a class="navbar-brand" style="font-size:30px !important;color:#fff !important;width: 100%;text-align: center;">Task Manager</a>
+        </div>    
+        
+    </nav>
+</div>

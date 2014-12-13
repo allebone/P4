@@ -1,0 +1,29 @@
+{
+    "movie": {
+        "include": [
+            "routes.php"
+        ],
+        "name": "movie",
+        "order": 0,
+        "group": "app\/modules",
+        "enabled": true
+    },
+    "login": {
+        "include": [
+            "routes.php"
+        ],
+        "name": "login",
+        "order": 0,
+        "group": "app\/modules",
+        "enabled": true
+    },
+    "task": {
+        "include": [
+            "routes.php"
+        ],
+        "name": "task",
+        "order": 0,
+        "group": "app\/modules",
+        "enabled": true
+    }
+}
