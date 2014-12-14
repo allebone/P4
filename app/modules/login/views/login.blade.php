@@ -78,7 +78,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">Register Your Self..!!</h4>
+                <h4 class="modal-title" id="myModalLabel">Register</h4>
             </div>
             <div class="modal-body">
                 <form role="form" id='register_form'>
@@ -99,7 +99,7 @@
                         <input type="password" class="form-control" id="reg_cpwd" name='reg_cpwd' placeholder="Enter Confirm Password...">
                         <span id='cpwd_error' class='error' ></span>
                     </div>                            
-                    <button type="button" id='register' class="btn btn-primary">Register..!!</button>
+                    <button type="button" id='register' class="btn btn-primary">Register</button>
                 </form>                        
             </div>                    
         </div>
