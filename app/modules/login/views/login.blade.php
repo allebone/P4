@@ -3,19 +3,19 @@
 @section('content')
 
 <div class="col-lg-12 col-md-12 col-sm-12">                        
-    <div id='success' class="alert alert-success" style='text-align: center;display:none;'>Registration Successfully Completed..!!</div>
+    <div id='success' class="alert alert-success" style='text-align: center;display:none;'>Registration Successfully Completed</div>
     <div class="col-lg-6 col-md-6 col-sm-6" style="margin-top: 7%;">
         <div class="jumbotron">
             <h2>What is Task Manager?</h2>
             <ul class="answer">
                 <li>
-                    This is a web application by which any organization or an individual can manage tasks.
+                    This Web Application is for any organization or individual who want to manage tasks.
                 </li>
                 <li>
-                   This project has various small parts like Emailing task, Editing task, Deleting task.
+                    This project has the ability to Register, Login, Create/Read/Update/Delete Tasks, Email Tasks/Passwords.
                 </li>
                 <li>
-                    To get the ride of this tool please register.
+                    You may begin by Registering.
                 </li>
                 
             </ul>
@@ -42,7 +42,7 @@
                     </div>
                     <div class="checkbox">                        
                         <a id="forgot_password" data-toggle="modal" data-target="#forgot_modal" style="float:right;cursor: pointer;">
-                            Forgot Password??
+                            Forgot Password?
                         </a>                                                
                     </div>                                                
                     <button id='login_submit' type="button" class="btn btn-block btn-primary">Login</button>                    
@@ -301,7 +301,7 @@
 </script>
 <script>
     window.location.hash = "no-back-button";
-    window.location.hash = "Again-No-back-button";//again because google chrome don't insert first hash into history
+    window.location.hash = "Again-No-back-button";//again because google chrome doesn't insert first hash into history
     window.onhashchange = function() {
         window.location.hash = "no-back-button";
     }
