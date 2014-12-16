@@ -24,12 +24,30 @@ URL for Project Four
 Project Description
 -------------------
 
-Project Three is a clear demonstration of the ability to function with basic concepts in Laravel, Composer, et al. Below are the listed assistive libraries, but the concept from the project definition is clear.  Produce a clear demonstration of the aforementioned Laravel content, and have two mini applications contained within: One Generates Lorem Ipsum content for newly created sites or documents. The latter: a generator of fictional people and their personal information.  Great for many different applications. 
+Project Four is the culmination of this semester's work in Laravel/PHP. More advanced concepts in Laravel, the MVC method, CRUD via MySQL, and other underlying technologies (PHP, HTML5, et al.)  For my demonstration, I choose an RSVP System, but had several issues unable to be rectified, beginngin several weeks ago. In the end, I choose instead to design the example project of a "Task Manager" which incorporated several of the advanced features and all the minimum requirements from the Final Project specification. Namely:
+
+Requirements:
+
+- User Authentication with Individual Task Lists
+- Consolidated Task Listing at Login (Incomplete in Bold)
+- Selectable Individual Pages per Status (Completed, Incomplete, and All)
+- A Modal Window for Adding new Tasks
+- A Modal Window for Editing/Completing Tasks (and their details)
+- Task Status: Shows Incomplete or Date Completed (becomes unbolded, as well)  
+- Error Checking: No empty Task fields, email signups/registrations
+    
+Completed Extra Challenges
+
+- User Authentication using the Sentry (See Below Rationale)
+- User Registration using email
+- Password recovery using email tokens
+- Ability to Email a task reminder
+
 
 Demo Information
 --------------------
 
-> **Presentation:** My Demo can be found [HERE](http://screencast.com/t/JgLb0ejmSzq).
+> **Presentation:** My Demo can be found [HERE](http://screencast.com/).
 
 Additional Information
 --------------------
@@ -38,7 +56,6 @@ Additional Information
 
 The following items were included for attached rationale:
 
-	
 ##**[Bootstrap GitHub](https://github.com/twbs/bootstrap)**
 	
 >	Utilizing the Bootstrap Framework gave me the opportunity to uniformly present information within my site. Its requisite theme from CSS is also represented below as a utilized dependency. The color mapping, sized character depictions, and quick implementation of anchored areas are unparallelled for a fledgling designer. 
@@ -55,6 +72,6 @@ The following items were included for attached rationale:
 
 >	I utilized the Faker PHP Library to facilitate creation of several fake identities. 
 
-##**[Sentry - Lorem Ipsum Generator](https://packagist.org/packages/badcow/lorem-ipsum)**
+##**[Sentry - Authentication/Authorization Framework](https://github.com/cartalyst/sentry)**
 
->	I utilized the Sentry, authentication  
+>	I utilized the Sentry, authentication and authorization Framework. I was more aware of the features and setup compared to oauth, having implemented it prior to this class.  
