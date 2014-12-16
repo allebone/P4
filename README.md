@@ -1,17 +1,18 @@
-Allebone.Me - Project Three Repository
+Allebone.Me - Project Four Repository
 ===================
 
 
-Greetings.  I'm Bryan, and this is the Repository for my Project Three   **Github** will contain the most up-to-date Commits for this project.  
+Greetings.  I'm Bryan, and this is the Repository for my Project Four.  
+**Github** will contain the most up-to-date Commits for this project.  
 
 
 ----------
 
 
-URL for Project Three
+URL for Project Four
 -------------
 
-##**[http://p3.allebone.me](http://p3.allebone.me)**
+##**[http://p4.allebone.me](http://p4.allebone.me)**
 
 
 > **Note:**
@@ -50,10 +51,10 @@ The following items were included for attached rationale:
 
 >	I utilized the Font Awesome inclusions so that I could use the their fancy Icon Sets. For instance, Facebook, LinkedIn, GitHub, and Pied Piper are the only icons used in the contact area: doing more with less in terms of visual appeal.Also, there are LESS versions and pre-processing already apparent for efficiency.
 
-##**[Faker](https://github.com/fzaninotto/Faker)**
+##**[Ham Sandwich](https://github.com/fzaninotto/Faker)**
 
 >	I utilized the Faker PHP Library to facilitate creation of several fake identities. 
 
-##**[Badcow - Lorem Ipsum Generator](https://packagist.org/packages/badcow/lorem-ipsum)**
+##**[Sentry - Lorem Ipsum Generator](https://packagist.org/packages/badcow/lorem-ipsum)**
 
->	I utilized the Lorem Ipsum Generator from Badcow, ths is the method by which I generate Lorum Ipsum textual data. 
+>	I utilized the Sentry, authentication  
