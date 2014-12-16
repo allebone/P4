@@ -9,7 +9,7 @@
             <h2>What is Task Manager?</h2>
             <ul class="answer">
                 <li>
-                    This Web Application is for any organization or individual who want to manage tasks.
+                    This Web Application is for any organization or individual who wants to manage tasks.
                 </li>
                 <li>
                     This project has the ability to Register, Login, Create/Read/Update/Delete Tasks, Email Tasks/Passwords.
