@@ -68,9 +68,9 @@ The following items were included for attached rationale:
 
 >	I utilized the Font Awesome inclusions so that I could use the their fancy Icon Sets. For instance, Facebook, LinkedIn, GitHub, and Pied Piper are the only icons used in the contact area: doing more with less in terms of visual appeal.Also, there are LESS versions and pre-processing already apparent for efficiency.
 
-##**[Ham Sandwich](https://github.com/fzaninotto/Faker)**
+##**[Ham Sandwich]()**
 
->	I utilized the Faker PHP Library to facilitate creation of several fake identities. 
+>	I utilized Ham to make a sandwich with mustard.
 
 ##**[Sentry - Authentication/Authorization Framework](https://github.com/cartalyst/sentry)**
 
