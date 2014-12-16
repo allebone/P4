@@ -1,4 +1,4 @@
-<div id='success' class="alert alert-success">Task Created Successfully..!!</div>
+<div id='success' class="alert alert-success">Task Created</div>
 
 <!-- if there are creation errors, they will show here -->
 
@@ -10,13 +10,13 @@
 <!--            {{ (isset($edit_movie)) ? print_r($edit_movie) : ''}}-->
 <div id="title_div" class="form-group">
     {{ Form::label('title', 'Task Description') }}
-    {{ Form::textarea('title', Input::old('title', isset($edit_task) ? $edit_task->title : ''), array('class' => 'form-control','placeholder'=>'Enter Task Description...')) }}
+    {{ Form::textarea('title', Input::old('title', isset($edit_task) ? $edit_task->title : ''), array('class' => 'form-control','placeholder'=>'Enter Task Description:')) }}
 </div>
 <span id='title_error' class="error"></span>            
 
 <!--<div id="description_div" class="form-group">
     {{ Form::label('description', 'Description') }}
-    {{ Form::textarea('description', Input::old('description', isset($edit_task) ? $edit_task->description : ''), array('class' => 'form-control','placeholder'=>'Enter Task Description...')) }}
+    {{ Form::textarea('description', Input::old('description', isset($edit_task) ? $edit_task->description : ''), array('class' => 'form-control','placeholder'=>'Enter Task Description:')) }}
 </div>            
 <span id='description_error' style='color:red;'></span>-->
 
@@ -125,10 +125,10 @@
                             $('#update_task').removeAttr('disabled');
                         } else {
                             $('#update_task').removeAttr('disabled');
-                            $('#success').html('Your Changes Has Been Saved Successfully!!!').show(1500);
+                            $('#success').html('Your Changes Has Been Saved Successfully').show(1000);
                             setTimeout(function() {
                                 $('#abc').modal('hide');
-                                $('#success').html('Task Created Successfully..!!');
+                                $('#success').html('Task Created Successfully');
                             }, 3000);
                         }
                     }

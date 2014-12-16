@@ -30,7 +30,7 @@
         $('#success').hide();
         $('.loader').hide();
         $(document).off('click', '.complete_task').on('click', '.complete_task', function() {
-            var conf = confirm("Are you sure you want to complete this Task?");
+            var conf = confirm("Are you sure you want to mark the task as complete?");
             if (conf === true) {
                 var task_id = $(this).attr('taskid');
                 var ele = $(this);
@@ -44,8 +44,8 @@
                     success: function(result) {
                         if (result) {
                             $('.loader').hide();
-                            $('#success').html('Task Mark As Complete Successfully!!!').slideDown(1500);
-                            $('#success').html('Task Mark As Complete Successfully!!!').slideUp(1500);
+                            $('#success').html('Task Marked As Complete').slideDown(1000);
+                            $('#success').html('Task Marked As Complete').slideUp(1000);
                             ele.removeAttr('disabled');
                             setTimeout(function() {
                                 $('#abc').modal('hide');
@@ -71,8 +71,8 @@
                     success: function(result) {
                         if (result) {
                             $('.loader').hide();
-                            $('#success').html('Task Has Been E-mail Successfully!!!').slideDown(1500);
-                            $('#success').html('Task Has Been E-mail Successfully!!!').slideUp(1500);
+                            $('#success').html('Task Has Been E-mail Successfully!!!').slideDown(1000);
+                            $('#success').html('Task Has Been E-mail Successfully!!!').slideUp(1000);
                             setTimeout(function() {
                                 $('#abc').modal('hide');
                             }, 3000);

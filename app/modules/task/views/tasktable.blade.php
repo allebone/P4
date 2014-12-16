@@ -15,6 +15,6 @@
 @endforeach
 @else
 <tr>
-    <td colspan="6" style="text-align: center;">Oops...There are No tasks to show.</td>
+    <td colspan="6" style="text-align: center;">No Tasks At This Moment</td>
 </tr>
 @endif

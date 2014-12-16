@@ -11,7 +11,7 @@
 <table class="table table-bordered" id='all_task_table'>
     <thead>
         <tr>                           
-            <th>Task Summary</th>
+            <th>Tasks Summary</th>
             <th>Created On</th>            
             <th>Completed On</th>            
             <th></th>
@@ -71,8 +71,8 @@
                     },
                     success: function(result) {
                         if (result) {
-                            $('#info').html('Task Deleted Successfully!!!').slideDown(1500);
-                            $('#info').slideUp(1500);
+                            $('#info').html('Task Deleted Successfully').slideDown(1000);
+                            $('#info').slideUp(1000);
                             showData();
                             $(ele).html("<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>");
                         }
@@ -95,8 +95,8 @@
                     },
                     success: function(result) {
                         if (result) {
-                            $('#info').html('Task Mark As Complete Successfully!!!').slideDown(1500);
-                            $('#info').html('Task Mark As Complete Successfully!!!').slideUp(1500);
+                            $('#info').html('Task Marked As Complete').slideDown(1000);
+                            $('#info').html('Task Marked As Complete').slideUp(1000);
                             showData();
                             $(ele).html("<span class='glyphicon glyphicon-ok' aria-hidden='true'></span>");
                         }
@@ -118,8 +118,8 @@
                     },
                     success: function(result) {
                         if (result) {
-                            $('#info').html('Task Has Been E-mail Successfully!!!').slideDown(1500);
-                            $('#info').html('Task Has Been E-mail Successfully!!!').slideUp(1500);
+                            $('#info').html('Task Has Been E-mailed').slideDown(1000);
+                            $('#info').html('Task Has Been E-mailed').slideUp(1000);
                             showData();
                             $(ele).html("<span class='glyphicon glyphicon-envelope' aria-hidden='true'></span>");
                         }

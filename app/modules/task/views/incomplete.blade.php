@@ -5,7 +5,7 @@
 <hr color="#a1a1a1" style="border:1px solid black !important;margin-top:10px !important;"/>-->
 
 <!-- will be used to show any messages -->
-<div id='info' class="alert alert-info">Task Deleted Successfully!!!</div>
+<div id='info' class="alert alert-info">Task Deleted</div>
 
 <table class="table table-bordered" id='incomplete_task_table'>
     <thead>
@@ -73,8 +73,8 @@
                     },
                     success: function(result) {
                         if (result) {
-                            $('#info').html('Task Deleted Successfully!!!').slideDown(1500);
-                            $('#info').html('Task Deleted Successfully!!!').slideUp(1500);
+                            $('#info').html('Task Deleted').slideDown(1000);
+                            $('#info').html('Task Deleted').slideUp(1000);
                             showData();
                             $(ele).html("<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>");
                         }
@@ -97,8 +97,8 @@
                     },
                     success: function(result) {
                         if (result) {
-                            $('#info').html('Task Mark As Complete Successfully!!!').slideDown(1500);
-                            $('#info').html('Task Mark As Complete Successfully!!!').slideUp(1500);
+                            $('#info').html('Task Marked As Complete').slideDown(1000);
+                            $('#info').html('Task Marked As Complete').slideUp(1000);
                             showData();
                             $(ele).html("<span class='glyphicon glyphicon-ok' aria-hidden='true'></span>");
                         }
@@ -120,8 +120,8 @@
                     },
                     success: function(result) {
                         if (result) {
-                            $('#info').html('Task Has Been E-mail Successfully!!!').slideDown(1500);
-                            $('#info').html('Task Has Been E-mail Successfully!!!').slideUp(1500);
+                            $('#info').html('Task Has Been E-mailed').slideDown(1000);
+                            $('#info').html('Task Has Been E-mailed').slideUp(1000);
                             showData();
                             $(ele).html("<span class='glyphicon glyphicon-envelope' aria-hidden='true'></span>");
                         }
