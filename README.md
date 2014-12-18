@@ -68,9 +68,9 @@ The following items were included for attached rationale:
 
 >	I utilized the Font Awesome inclusions so that I could use the their fancy Icon Sets. For instance, Facebook, LinkedIn, GitHub, and Pied Piper are the only icons used in the contact area: doing more with less in terms of visual appeal.Also, there are LESS versions and pre-processing already apparent for efficiency.
 
-##**[Ham Sandwich]()**
+##**[Laravel-Modules(https://github.com/creolab/laravel-modules)**
 
->	I utilized Ham to make a sandwich with mustard.
+>	Laravel Modules allows for Application Specific definitions in Laravel. For instance in my Application, I have contained code for Task and Login functions.  This makes it granular and certainly more easy to use that code for a different or similar project in the future.
 
 ##**[Sentry - Authentication/Authorization Framework](https://github.com/cartalyst/sentry)**
 
