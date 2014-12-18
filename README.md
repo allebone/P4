@@ -60,7 +60,7 @@ The following items were included for attached rationale:
 	
 >	Utilizing the Bootstrap Framework gave me the opportunity to uniformly present information within my site. Its requisite theme from CSS is also represented below as a utilized dependency. The color mapping, sized character depictions, and quick implementation of anchored areas are unparallelled for a fledgling designer. 
 
-##**Bootstrap Theme (.css)**
+##**Bootstrap Theme(.css)**
  
 >	I don't have the luxury of time/experience to create eye pleasing color palates, and functional design.  Twitter is generous enough to provide these under reusable  licensing terms. I altered them (within the confines of the licensing structure) to facilitate features/color schemes within my design.  I've listed this separately due to its alteration within Licensing. 
 
@@ -68,7 +68,7 @@ The following items were included for attached rationale:
 
 >	I utilized the Font Awesome inclusions so that I could use the their fancy Icon Sets. For instance, Facebook, LinkedIn, GitHub, and Pied Piper are the only icons used in the contact area: doing more with less in terms of visual appeal.Also, there are LESS versions and pre-processing already apparent for efficiency.
 
-##**[Laravel-Modules(https://github.com/creolab/laravel-modules)**
+##**[Laravel-Modules](https://github.com/creolab/laravel-modules)**
 
 >	Laravel Modules allows for Application Specific definitions in Laravel. For instance in my Application, I have contained code for Task and Login functions.  This makes it granular and certainly more easy to use that code for a different or similar project in the future.
 
